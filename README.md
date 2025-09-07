@@ -1,6 +1,7 @@
 # 🎬 Hybrid Movie Recommendation System
 
-![Movie Reel](assets/movie_reel.png)
+![dataset-cover](https://github.com/user-attachments/assets/c40a80fe-eb11-404d-b56e-944bfcf8d96f)
+
 
 Proje kaggle link: https://www.kaggle.com/code/handekln/movielens-20m-hibrit-neri-sistemi
 
