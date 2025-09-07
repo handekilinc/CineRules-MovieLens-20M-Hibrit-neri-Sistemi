@@ -1,4 +1,6 @@
-🎬 Hybrid Movie Recommendation System
+##🎬 Hybrid Movie Recommendation System
+
+
 📂 Dataset Information
 
 Bu proje, MovieLens (20M Dataset) verisi kullanılarak gerçekleştirilmiştir.
