@@ -1,34 +1,121 @@
-# CineRules-MovieLens-20M-Hibrit-Oneri-Sistemi
-Bu proje, MovieLens 20M veri seti kullanılarak film tavsiye sistemleri (recommendation systems) üzerine geliştirilmiştir. Öneri sistemleri, kullanıcıların geçmiş tercihlerini ve benzer kullanıcıların davranışlarını analiz ederek kişiselleştirilmiş öneriler sunmayı amaçlar.
+🎬 Hybrid Movie Recommendation System
+📂 Dataset Information
 
-Proje iki ana yaklaşımı birleştirmektedir:
+Bu proje, MovieLens (20M Dataset) verisi kullanılarak gerçekleştirilmiştir.
+Veri seti şunları içermektedir:
 
-Collaborative Filtering (İşbirlikçi Filtreleme):
-Kullanıcıların benzerliklerine ve film puanlama kalıplarına dayanarak tahminleme yapar. Matrix Factorization ve kullanıcı-film benzerlik yöntemleri bu kapsamda uygulanmıştır.
+rating.csv → Kullanıcıların filmlere verdiği puanlar
 
-Association Rule Mining (Birliktelik Kuralları):
-Kullanıcıların yüksek puan verdiği filmleri “alışveriş sepeti” gibi ele alarak, sık birlikte değerlendirilen film gruplarını keşfeder. Böylece “Bu filmi izleyen kullanıcılar, şu filmleri de izledi” mantığıyla öneriler üretir.
+movie.csv → Filmlere ait başlık ve tür bilgileri
 
-Bu hibrit yaklaşım sayesinde:
+tag.csv → Kullanıcıların filmlere uyguladığı etiketler
 
-Sadece popüler filmlere değil, aynı zamanda birlikte sık tercih edilen filmlere dayalı öneriler yapılır.
+link.csv → IMDb ve TMDb kimlikleri
 
-Kullanıcıya daha çeşitli, anlamlı ve açıklanabilir tavsiyeler sunulur.
+genome_scores.csv → Film–etiket alaka düzeyi
 
-🔍 Projede Ele Alınan Başlıca Adımlar
+genome_tags.csv → Etiket açıklamaları
 
-Veri keşfi (EDA) ve ön işleme
+📊 Veri Özeti:
 
-Popülerlik tabanlı ve içerik tabanlı (content-based) baseline modeller
+27.278 film
 
-Collaborative Filtering (User-User, Item-Item, Matrix Factorization)
+138.493 kullanıcı
 
-Birliktelik kuralları (Apriori / FP-Growth) ile film eşleştirme
+20.000.263 rating
 
-Hibrit öneri modeli (CF + Association Rules)
+465.564 tag
 
-Performans değerlendirmesi (RMSE, Precision@K, Recall@K, NDCG)
+🎯 Project Objectives
 
-🎯 Hedef
+Kullanıcıların geçmiş film izleme ve puanlama davranışlarını analiz ederek kişiselleştirilmiş film önerileri sunmak
 
-Bu proje, öneri sistemleri alanında farklı yaklaşımları birleştirerek hem akademik çalışmalara hem de gerçek dünya uygulamalarına ışık tutmayı hedeflemektedir.
+Birliktelik kuralı (Association Rule Mining) ve Collaborative Filtering (CF) yöntemlerini birleştirerek hibrit öneri sistemi tasarlamak
+
+Daha ölçeklenebilir ve optimize edilmiş öneri sistemi geliştirmek
+
+📝 Project Overview
+
+Öneri sistemleri, kullanıcıya ilgisini çekebilecek içerikleri tahmin etmeyi amaçlar.
+Bu projede:
+
+Birliktelik Kuralı (Apriori algoritması) kullanılarak filmler arasındaki birlikte izlenme ilişkileri bulundu.
+
+Collaborative Filtering (CF) ile kullanıcıların tercihleri üzerinden öneriler üretildi.
+
+Bu iki yöntem hibrit hale getirilerek daha güvenilir ve çeşitli öneriler sağlandı.
+
+🔑 What is Association Rule Mining?
+
+Birliktelik kuralı, kullanıcıların geçmiş davranışlarından “X izlendiyse, Y de izlenir” şeklinde ilişki kuralları çıkarmayı sağlar.
+Örneğin:
+
+Eğer bir kullanıcı The Matrix izlediyse, yüksek olasılıkla Inception da izlemiştir.
+
+Projemizde Apriori algoritması ile kurallar çıkarıldı ve öneri sistemine entegre edildi.
+
+🛠️ Libraries Used
+
+Projede aşağıdaki Python kütüphaneleri kullanılmıştır:
+
+pandas → Veri işleme
+
+numpy → Sayısal hesaplamalar
+
+mlxtend → Apriori & Association Rules
+
+matplotlib → Veri görselleştirme
+
+networkx (opsiyonel) → Kuralların grafiksel gösterimi
+
+📌 Project Steps
+
+Veri Hazırlama
+
+Eksik verilerin kontrolü
+
+Kullanıcı × Film pivot matrisi oluşturma
+
+One-Hot Encoding
+
+Rating ≥ 4 olan filmleri “beğenilen (liked)” olarak işaretleme
+
+Birliktelik Kuralları (Apriori)
+
+En sık birlikte izlenen film kümelerini bulma
+
+Confidence & Lift metrikleri ile filtreleme
+
+Collaborative Filtering (CF)
+
+Kullanıcıların izlediği filmler üzerinden benzer kullanıcı davranışlarını analiz etme
+
+Hybrid Model
+
+Apriori + CF birleşimi ile öneriler üretme
+
+Visualization
+
+İlk 10 kullanıcı için öneri sonuçlarını grafikle gösterme
+
+🔮 Future Work
+
+Deep Learning tabanlı modeller (Autoencoders, Neural Collaborative Filtering) ile daha güçlü öneriler geliştirmek
+
+Zaman serisi analizi yaparak film tercihlerindeki dönemsel değişimleri incelemek
+
+Content-based filtering ile film açıklamalarını ve tür bilgilerini kullanmak
+
+Gerçek zamanlı öneri sistemi (ör. bir web app) geliştirmek
+
+✅ Conclusion
+
+Bu proje, birliktelik kuralları ve işbirlikçi filtreleme yöntemlerini birleştirerek hibrit bir öneri sistemi ortaya koymuştur.
+
+Apriori algoritması ile güçlü film ilişkileri keşfedildi.
+
+Collaborative Filtering ile kullanıcıya özel öneriler üretildi.
+
+Hibrit model, yalnızca tek bir yönteme dayalı sistemlere kıyasla daha zengin, çeşitli ve güvenilir öneriler sağladı.
+
+🎯 Sonuç olarak, bu çalışma gelecekte daha gelişmiş makine öğrenimi ve derin öğrenme tabanlı öneri sistemleri için sağlam bir temel sunmaktadır.
