@@ -1,120 +1,82 @@
-# 🎬 Hybrid Movie Recommendation System 🍿  
+# 🎬 Hybrid Movie Recommendation System
 
-![Background Image](assets/background.png)  
+![Movie Reel](assets/movie_reel.png)
 
-📌 **Project Kaggle Link:** [Soon to be added]  
+## 📂 Dataset Information 🎞️
+Bu proje, MovieLens (20M Dataset) verisi kullanılarak gerçekleştirilmiştir.
 
----
+- **rating.csv** → Kullanıcıların filmlere verdiği puanlar  
+- **movie.csv** → Filmlere ait başlık ve tür bilgileri  
+- **tag.csv** → Kullanıcıların filmlere uyguladığı etiketler  
+- **link.csv** → IMDb ve TMDb kimlikleri  
+- **genome_scores.csv** → Film–etiket alaka düzeyi  
+- **genome_tags.csv** → Etiket açıklamaları  
 
-## 🎥 Project Overview  
+![Dataset Image](assets/dataset_overview.png)
 
-Bu proje, **MovieLens 20M Dataset** kullanılarak geliştirilmiş hibrit bir öneri sistemi sunmaktadır.  
-Amaç, kullanıcıların izleme alışkanlıklarını analiz ederek **kişiselleştirilmiş film önerileri** üretmektir.  
+## 📊 Veri Özeti 📽️
+- 27.278 film  
+- 138.493 kullanıcı  
+- 20.000.263 rating  
+- 465.564 tag  
 
-Öneri sistemi iki temel yaklaşımı birleştirmektedir:  
-- 🔗 **Birliktelik Kuralları (Association Rule Mining / Apriori)**  
-- 👥 **Collaborative Filtering (CF)**  
+## 🎯 Project Objectives 🍿
+- Kullanıcıların geçmiş film izleme ve puanlama davranışlarını analiz ederek kişiselleştirilmiş film önerileri sunmak  
+- Birliktelik kuralı (Association Rule Mining) ve Collaborative Filtering (CF) yöntemlerini birleştirerek hibrit öneri sistemi tasarlamak  
+- Daha ölçeklenebilir ve optimize edilmiş öneri sistemi geliştirmek  
 
-Bu iki yöntemin birleşimi sayesinde daha güvenilir, çeşitli ve kişisel öneriler sağlanmıştır.  
+## 📝 Project Overview 🎬
+Öneri sistemleri, kullanıcıya ilgisini çekebilecek içerikleri tahmin etmeyi amaçlar.  
+Bu projede:  
 
----
+- **Birliktelik Kuralı (Apriori)** kullanılarak filmler arasındaki birlikte izlenme ilişkileri bulundu  
+- **Collaborative Filtering (CF)** ile kullanıcıların tercihleri üzerinden öneriler üretildi  
+- Bu iki yöntem **hibrit** hale getirilerek daha güvenilir ve çeşitli öneriler sağlandı  
 
-## 🎯 Project Objectives  
+![Hybrid System](assets/hybrid_system.png)
 
-- Kullanıcıların geçmiş film tercihlerini analiz ederek kişiselleştirilmiş öneriler sunmak.  
-- Apriori algoritması ile filmler arasındaki birlikte izlenme ilişkilerini keşfetmek.  
-- Collaborative Filtering (CF) ile benzer kullanıcı davranışlarından öneriler çıkarmak.  
-- Hibrit bir model kurarak tekil yöntemlere göre daha zengin ve güçlü bir sistem tasarlamak.  
+## 🔑 What is Association Rule Mining? 🧩
+Birliktelik kuralı, kullanıcıların geçmiş davranışlarından “X izlendiyse, Y de izlenir” şeklinde ilişki kuralları çıkarmayı sağlar.  
+Örnek: Eğer bir kullanıcı *The Matrix* izlediyse, yüksek olasılıkla *Inception* da izlemiştir.  
 
----
+Projemizde **Apriori algoritması** ile kurallar çıkarıldı ve öneri sistemine entegre edildi.
 
-## 📂 Dataset Information  
+## 🛠️ Libraries Used 🛠️
+- **pandas** → Veri işleme  
+- **numpy** → Sayısal hesaplamalar  
+- **mlxtend** → Apriori & Association Rules  
+- **matplotlib** → Veri görselleştirme  
+- **networkx** (opsiyonel) → Kuralların grafiksel gösterimi  
 
-Proje, **MovieLens (20M Dataset)** verisi ile gerçekleştirilmiştir.  
+## 📌 Project Steps 🗂️
+1. **Veri Hazırlama**  
+   - Eksik verilerin kontrolü  
+   - Kullanıcı × Film pivot matrisi oluşturma  
+   - One-Hot Encoding  
+   - Rating ≥ 4 olan filmleri “beğenilen (liked)” olarak işaretleme  
+2. **Birliktelik Kuralları (Apriori)**  
+   - En sık birlikte izlenen film kümelerini bulma  
+   - Confidence & Lift metrikleri ile filtreleme  
+3. **Collaborative Filtering (CF)**  
+   - Kullanıcıların izlediği filmler üzerinden benzer kullanıcı davranışlarını analiz etme  
+4. **Hybrid Model**  
+   - Apriori + CF birleşimi ile öneriler üretme  
+5. **Visualization**  
+   - İlk 10 kullanıcı için öneri sonuçlarını grafikle gösterme  
 
-**Veri setinde bulunan dosyalar:**  
-- 🎞️ `rating.csv` → Kullanıcıların filmlere verdiği puanlar  
-- 🎬 `movie.csv` → Filmlere ait başlık ve tür bilgileri  
-- 🏷️ `tag.csv` → Kullanıcıların filmlere eklediği etiketler  
-- 🔗 `link.csv` → IMDb ve TMDb kimlikleri  
-- 📊 `genome_scores.csv` → Film–etiket alaka düzeyi  
-- 📝 `genome_tags.csv` → Etiket açıklamaları  
+![Visualization Example](assets/visualization.png)
 
-**Veri Özeti:**  
-- 🎥 **27.278** film  
-- 👥 **138.493** kullanıcı  
-- ⭐ **20.000.263** rating  
-- 🏷️ **465.564** tag  
+## 🔮 Future Work 🔭
+- Deep Learning tabanlı modeller (Autoencoders, Neural Collaborative Filtering) ile daha güçlü öneriler geliştirmek  
+- Zaman serisi analizi yaparak film tercihlerindeki dönemsel değişimleri incelemek  
+- Content-based filtering ile film açıklamalarını ve tür bilgilerini kullanmak  
+- Gerçek zamanlı öneri sistemi (ör. bir web app) geliştirmek  
 
----
+## ✅ Conclusion 🎥
+Bu proje, birliktelik kuralları ve işbirlikçi filtreleme yöntemlerini birleştirerek hibrit bir öneri sistemi ortaya koymuştur.  
+- Apriori algoritması ile güçlü film ilişkileri keşfedildi  
+- Collaborative Filtering ile kullanıcıya özel öneriler üretildi  
+- Hibrit model, yalnızca tek bir yönteme dayalı sistemlere kıyasla daha zengin, çeşitli ve güvenilir öneriler sağladı  
 
-## 🔑 What is Association Rule Mining?  
-
-Birliktelik kuralları, kullanıcıların geçmiş davranışlarından **“X izlendiyse, Y de izlenir”** şeklinde tahminler yapmayı sağlar.  
-
-Örneğin:  
-👉 Eğer bir kullanıcı **The Matrix** izlediyse, yüksek olasılıkla **Inception** da izlemiştir.  
-
-📌 Bu projede **Apriori algoritması** kullanılarak en sık birlikte izlenen film kümeleri çıkarılmıştır.  
-
----
-
-## 📌 Project Steps  
-
-### 1️⃣ Veri Hazırlama  
-- Eksik verilerin kontrolü  
-- Kullanıcı × Film pivot matrisi oluşturma  
-- One-Hot Encoding  
-- Rating ≥ 4 olan filmleri **“beğenilen”** olarak işaretleme  
-
-### 2️⃣ Birliktelik Kuralları (Apriori)  
-- En sık birlikte izlenen film kümelerinin çıkarılması  
-- Confidence & Lift metrikleri ile filtreleme  
-
-### 3️⃣ Collaborative Filtering (CF)  
-- Kullanıcıların tercihleri üzerinden benzer kullanıcı davranışlarını inceleme  
-
-### 4️⃣ Hibrit Model  
-- Apriori + CF birleşimi ile öneriler üretme  
-
-### 5️⃣ Görselleştirme  
-- 📊 İlk 10 kullanıcı için öneri sonuçlarının grafiklerle gösterimi  
-
----
-
-## 🛠️ Libraries Used  
-
-- 🐼 **pandas** → Veri işleme  
-- 🔢 **numpy** → Sayısal hesaplamalar  
-- 📐 **mlxtend** → Apriori & Association Rules  
-- 📊 **matplotlib** → Veri görselleştirme  
-- 🌐 **networkx** (opsiyonel) → Grafiksel gösterimler  
-
----
-
-## 🔮 Future Work  
-
-- 🤖 **Deep Learning tabanlı modeller** (Autoencoders, Neural CF) ile daha güçlü öneriler geliştirmek  
-- ⏳ **Zaman serisi analizi** ile dönemsel film tercihlerini incelemek  
-- 📝 **Content-based filtering** ile film açıklamalarını ve tür bilgilerini kullanmak  
-- 🌍 **Gerçek zamanlı web uygulaması** olarak sistemi hayata geçirmek  
-
----
-
-## ✅ Conclusion  
-
-Bu proje, **Apriori algoritması** ve **Collaborative Filtering** yöntemlerini birleştirerek **hibrit bir öneri sistemi** geliştirmiştir.  
-
-- 🔗 Apriori ile filmler arasındaki güçlü ilişkiler keşfedildi.  
-- 👥 CF ile kullanıcıya özel öneriler üretildi.  
-- 🔀 Hibrit model, tek yöntemli sistemlere kıyasla daha **çeşitli, güvenilir ve kişisel** sonuçlar sundu.  
-
-🎯 Sonuç olarak, bu proje gelecekte daha gelişmiş **makine öğrenimi** ve **derin öğrenme** tabanlı öneri sistemleri için güçlü bir temel oluşturmaktadır.  
-
----
-
-## 📌 Reference  
-
-F. Maxwell Harper and Joseph A. Konstan. 2015. *The MovieLens Datasets: History and Context.*  
-ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4, Article 19.  
-DOI: [10.1145]()
+📌 **Referans:**  
+F. Maxwell Harper and Joseph A. Konstan. 2015. *The MovieLens Datasets: History and Context.* ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4, Article 19. DOI: [10.1145/2827872](http://dx.doi.org/10.1145/2827872)
