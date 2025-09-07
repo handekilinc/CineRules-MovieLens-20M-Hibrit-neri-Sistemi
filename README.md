@@ -1,4 +1,4 @@
-##🎬 Hybrid Movie Recommendation System
+🎬 Hybrid Movie Recommendation System
 
 
 📂 Dataset Information
