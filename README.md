@@ -15,7 +15,7 @@ Bu proje, MovieLens (20M Dataset) verisi kullanılarak gerçekleştirilmiştir.
 - **genome_scores.csv** → Film–etiket alaka düzeyi  
 - **genome_tags.csv** → Etiket açıklamaları  
 
-<img width="508" height="290" alt="Metapath-instances-of-MovieLens-dataset" src="https://github.com/user-attachments/assets/02bc35c1-6c8d-47cf-88f4-3d3603456d6d" />
+![Uploading 1-s2.0-S1568494621001952-gr3.jpg…]()
 
 
 ## 📊 Veri Özeti 📽️
@@ -37,7 +37,8 @@ Bu projede:
 - **Collaborative Filtering (CF)** ile kullanıcıların tercihleri üzerinden öneriler üretildi  
 - Bu iki yöntem **hibrit** hale getirilerek daha güvenilir ve çeşitli öneriler sağlandı  
 
-![Hybrid System](assets/hybrid_system.png)
+![88506recommendation-system](https://github.com/user-attachments/assets/1456024d-de99-4a50-a948-4b776ddd5794)
+
 
 ## 🔑 What is Association Rule Mining? 🧩
 Birliktelik kuralı, kullanıcıların geçmiş davranışlarından “X izlendiyse, Y de izlenir” şeklinde ilişki kuralları çıkarmayı sağlar.  
