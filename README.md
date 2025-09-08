@@ -68,7 +68,8 @@ Projemizde **Apriori algoritması** ile kurallar çıkarıldı ve öneri sistemi
 5. **Visualization**  
    - İlk 10 kullanıcı için öneri sonuçlarını grafikle gösterme  
 
-![Visualization Example](assets/visualization.png)
+![1-s2 0-S1568494621001952-gr3](https://github.com/user-attachments/assets/57433815-6098-42c5-8af7-6669a0915b85)
+
 
 ## 🔮 Future Work 🔭
 - Deep Learning tabanlı modeller (Autoencoders, Neural Collaborative Filtering) ile daha güçlü öneriler geliştirmek  
