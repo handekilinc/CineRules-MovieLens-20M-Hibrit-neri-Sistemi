@@ -15,7 +15,8 @@ Bu proje, MovieLens (20M Dataset) verisi kullanılarak gerçekleştirilmiştir.
 - **genome_scores.csv** → Film–etiket alaka düzeyi  
 - **genome_tags.csv** → Etiket açıklamaları  
 
-![Dataset Image](assets/dataset_overview.png)
+<img width="508" height="290" alt="Metapath-instances-of-MovieLens-dataset" src="https://github.com/user-attachments/assets/02bc35c1-6c8d-47cf-88f4-3d3603456d6d" />
+
 
 ## 📊 Veri Özeti 📽️
 - 27.278 film  
