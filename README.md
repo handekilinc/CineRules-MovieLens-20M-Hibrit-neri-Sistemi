@@ -13,7 +13,7 @@ Bu proje, MovieLens (20M Dataset) verisi kullanılarak gerçekleştirilmiştir.
 - **genome_scores.csv** → Film–etiket alaka düzeyi  
 - **genome_tags.csv** → Etiket açıklamaları  
 
-![Uploading 1-s2.0-S1568494621001952-gr3.jpg…]()
+![Uploading 1-s2.0-S1568494621001952-gr3.jpg]()
 
 
 ## 📊 Veri Özeti 📽️
