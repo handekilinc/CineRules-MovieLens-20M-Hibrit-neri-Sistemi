@@ -2,6 +2,7 @@
 
 ![1756172534000](https://github.com/user-attachments/assets/67a04e39-0f8d-4d7a-a253-2de6aa88b739)
 
+Proje Kaggle Linki: https://www.kaggle.com/code/handekln/movielens-20m-hibrit-neri-sistemi
 
 ## 📂 Dataset Information 🎞️
 Bu proje, MovieLens (20M Dataset) verisi kullanılarak gerçekleştirilmiştir.
