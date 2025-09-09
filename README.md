@@ -65,7 +65,6 @@ Projemizde **Apriori algoritması** ile kurallar çıkarıldı ve öneri sistemi
 4. **Hybrid Model**  
    - Apriori + CF birleşimi ile öneriler üretme  
 5. **Visualization**  
-   - İlk 10 kullanıcı için öneri sonuçlarını grafikle gösterme  
 
 ![1-s2 0-S1568494621001952-gr3](https://github.com/user-attachments/assets/57433815-6098-42c5-8af7-6669a0915b85)
 
